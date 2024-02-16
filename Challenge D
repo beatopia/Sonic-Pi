@@ -1,0 +1,117 @@
+# CHALLENGE D
+use_bpm 136
+use_synth :piano
+define :m1e do
+  play :r
+  sleep 1
+  play:E4
+  play:Gs4
+  sleep 2
+  play:E5
+  play:Gs4
+  sleep 1
+end
+define :m57 do
+  play:B4
+  sleep 0.75
+  play:As4
+  sleep 0.25
+  play:Gs4
+  play:B4
+  sleep 0.75
+  play:Cs5
+  sleep 0.25
+  play:B4
+  sleep 1
+  play:Gs4
+  play:E5
+  sleep 1
+end
+define :m28 do
+  play:E4
+  sleep 1
+  play:E5
+  play:Gs4
+  sleep 2
+  play:E5
+  play:Gs4
+  sleep 1
+end
+define :m346 do
+  play :r
+  sleep 1
+  play:E5
+  play:Gs4
+  play:B4
+  sleep 1
+  play:B4
+  sleep 1
+  play:E5
+  play:Gs4
+  sleep 1
+end
+define :bgs1 do
+  play:E3, amp: 0.25
+  sleep 1
+  play:B3, amp: 0.25
+  play:E4, amp: 0.25
+  sleep 1
+  play:B3, amp: 0.25
+  sleep 1
+  play:E4, amp: 0.25
+  sleep 1
+end
+live_loop:background_notes do
+  bgs1
+  bgs1
+  bgs1
+  6.times do
+    play:E3, amp: 1
+    sleep 1
+    play:B3, amp: 1
+    play:E4, amp: 1
+    sleep 1
+    play:B3, amp: 1
+    sleep 1
+    play:E4, amp: 1
+    sleep 1
+  end
+  stop
+end
+
+live_loop:drums do
+  8.times do
+    sample:perc_snap, amp: 0.25
+    sleep 0.05
+    sample :perc_snap2, amp: 0.1
+    sleep 0.95
+    sample:drum_snare_soft
+    sleep 1
+    sample:perc_snap, amp: 0.25
+    sample :perc_snap2, amp: 0.1
+    sleep 1
+    sample:drum_snare_soft
+    sleep 1
+  end
+  stop
+end
+
+# Measure 1 GOOB
+m1e
+# Measure 2
+m28
+# Measure 3
+m346
+# Measure 4
+m346
+# Measure 5
+m57
+# Measure 6
+m346
+# Measure 7
+m57
+# Measure 8
+m28
+# End
+use_synth :dpulse
+m1e

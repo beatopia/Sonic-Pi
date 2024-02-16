@@ -1,0 +1,114 @@
+# I Wait For You - Alex G
+# :3
+use_bpm 91.5
+use_synth:kalimba
+define :melody do
+  play :B4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.25
+  play :A4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.5
+  play :B4, amp: 2
+  sleep 0.5
+  play :B4, amp: 2
+  sleep 0.5
+  
+  play :B4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.28
+  play :D5, amp: 2
+  sleep 0.27
+  play :E5, amp: 2
+  sleep 0.42
+  play :D5, amp: 2
+  sleep 0.5
+  
+  
+  play :B4, amp: 2
+  sleep 0.3
+  play :B4, amp: 2
+  sleep 0.25
+  play :A4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.48
+  play :B4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.48
+  play :B4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.29
+  play :D5, amp: 2
+  sleep 0.27
+  play :E5, amp: 2
+  sleep 0.42
+  play :D5, amp: 2
+  sleep 0.46
+  
+  play :B4
+  sleep 0.3
+  play :B4
+  sleep 0.25
+  play :A4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.5
+  play :B4, amp: 2
+  sleep 0.5
+  play :B4, amp: 2
+  sleep 0.5
+  play :B4, amp: 2
+  sleep 0.29
+  play :D5, amp: 2
+  sleep 0.27
+  play :E5, amp: 2
+  sleep 0.42
+  play :D5, amp: 2
+  sleep 0.46
+  
+  play :B4
+  sleep 0.25
+  play :B4
+  sleep 0.25
+  play :A4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.25
+  play :B4, amp: 2
+  sleep 0.3
+  play :B4, amp: 2
+  sleep 0.5
+  play :B4, amp: 2
+  sleep 0.5
+  play :B4, amp: 2
+  sleep 0.3
+  play :B4, amp: 2
+  sleep 0.25
+  play :G4, amp: 2
+  sleep 0.3
+  play :G4, amp: 2
+  sleep 0.5
+  play :G4, amp: 2
+  sleep 0.4
+end
+
+melody
+live_loop:bg do
+  sample :drum_cymbal_soft, amp: 0.5
+  sleep 1.125
+  sample :drum_cymbal_pedal
+  sleep 0.05
+  sample :drum_cymbal_pedal
+  sleep 0.175
+end
+melody

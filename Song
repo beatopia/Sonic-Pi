@@ -1,9 +1,10 @@
 # Sample (lll) from https://www.youtube.com/watch?v=7q_w6A6Am6o
 use_bpm 120
-lll = "C:/Users/kailu/OneDrive/Desktop/cs samples/cssample.wav"
+lll = "C:/Users/kai_luzniak/Downloads/cssample.wav"
+m=1
 f=1
 live_loop :sample do
-  sample lll, amp: 0.8*f
+  sample lll, amp: 0.7*f*m
   sleep 16
 end
 define :startofmelody do
@@ -31,29 +32,29 @@ live_loop :drums do
   end
 end
 define :melody do
-  play :A3, amp:0.4*f, sustain: 0.75
+  play :A3, amp:0.7*f, sustain: 0.75
   sleep 1
-  play :b3, amp:0.4*f, sustain: 0.75
+  play :b3, amp:0.7*f, sustain: 0.75
   sleep 1
-  play :d4, amp:0.4*f, sustain: 0.75
+  play :d4, amp:0.7*f, sustain: 0.75
   sleep 2
-  play :b3, amp:0.4*f, sustain: 0.75
+  play :b3, amp:0.7*f, sustain: 0.75
 end
 define :melody2 do
-  play :B3, amp:0.4*f, sustain: 1.5
+  play :B3, amp:0.7*f, sustain: 1.5
   sleep 1
-  play :a3, amp:0.4*f, sustain: 1.5
+  play :a3, amp:0.7*f, sustain: 1.5
   sleep 0.5
-  play :a3, amp:0.4*f, sustain: 1.5
+  play :a3, amp:0.7*f, sustain: 1.5
 end
 define :melody3 do
-  play :B3, amp:0.4*f, sustain: 1.5
+  play :B3, amp:0.7*f, sustain: 1.5
   sleep 1
-  play :a3, amp:0.4*f, sustain: 1.5
+  play :a3, amp:0.7*f, sustain: 1.5
   sleep 1
-  play :b3, amp:0.4*f, sustain: 1.5
+  play :b3, amp:0.7*f, sustain: 1.5
   sleep 1
-  play :fs3, amp:0.4*f, sustain: 1.5
+  play :fs3, amp:0.7*f, sustain: 1.5
 end
 sleep 16
 live_loop :snares do
@@ -101,5 +102,6 @@ live_loop :drums do
     sample :drum_bass_soft, amp:1*f
     sleep 2
     f=f-0.05
+    m=m-0.05
   end
 end

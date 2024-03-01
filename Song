@@ -1,114 +1,105 @@
-# I Wait For You - Alex G
-# :3
-use_bpm 91.5
-use_synth:kalimba
+# Sample (lll) from https://www.youtube.com/watch?v=7q_w6A6Am6o
+use_bpm 120
+lll = "C:/Users/kailu/OneDrive/Desktop/cs samples/cssample.wav"
+f=1
+live_loop :sample do
+  sample lll, amp: 0.8*f
+  sleep 16
+end
+define :startofmelody do
+  melody
+  sleep 4
+  melody
+  sleep 4
+  melody
+end
+define :fastdrums do
+  sample :drum_snare_soft, amp:0.7*f, pan:0.5
+  sleep 0.5
+  sample :drum_snare_soft, amp:0.7*f, pan:0.5
+  sleep 0.5
+  sample :drum_snare_soft, amp:0.7*f, pan:0.5
+  sleep 0.5
+  sample :drum_snare_soft, amp:0.7*f, pan:0.5
+  sleep 0.5
+end
+sleep 16.072
+live_loop :drums do
+  with_fx :reverb do
+    sample :drum_bass_soft, amp:1*f
+    sleep 2
+  end
+end
 define :melody do
-  play :B4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.25
-  play :A4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.5
-  play :B4, amp: 2
-  sleep 0.5
-  play :B4, amp: 2
-  sleep 0.5
-  
-  play :B4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.28
-  play :D5, amp: 2
-  sleep 0.27
-  play :E5, amp: 2
-  sleep 0.42
-  play :D5, amp: 2
-  sleep 0.5
-  
-  
-  play :B4, amp: 2
-  sleep 0.3
-  play :B4, amp: 2
-  sleep 0.25
-  play :A4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.48
-  play :B4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.48
-  play :B4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.29
-  play :D5, amp: 2
-  sleep 0.27
-  play :E5, amp: 2
-  sleep 0.42
-  play :D5, amp: 2
-  sleep 0.46
-  
-  play :B4
-  sleep 0.3
-  play :B4
-  sleep 0.25
-  play :A4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.5
-  play :B4, amp: 2
-  sleep 0.5
-  play :B4, amp: 2
-  sleep 0.5
-  play :B4, amp: 2
-  sleep 0.29
-  play :D5, amp: 2
-  sleep 0.27
-  play :E5, amp: 2
-  sleep 0.42
-  play :D5, amp: 2
-  sleep 0.46
-  
-  play :B4
-  sleep 0.25
-  play :B4
-  sleep 0.25
-  play :A4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.25
-  play :B4, amp: 2
-  sleep 0.3
-  play :B4, amp: 2
-  sleep 0.5
-  play :B4, amp: 2
-  sleep 0.5
-  play :B4, amp: 2
-  sleep 0.3
-  play :B4, amp: 2
-  sleep 0.25
-  play :G4, amp: 2
-  sleep 0.3
-  play :G4, amp: 2
-  sleep 0.5
-  play :G4, amp: 2
-  sleep 0.4
+  play :A3, amp:0.4*f, sustain: 0.75
+  sleep 1
+  play :b3, amp:0.4*f, sustain: 0.75
+  sleep 1
+  play :d4, amp:0.4*f, sustain: 0.75
+  sleep 2
+  play :b3, amp:0.4*f, sustain: 0.75
 end
-
-melody
-live_loop:bg do
-  sample :drum_cymbal_soft, amp: 0.5
-  sleep 1.125
-  sample :drum_cymbal_pedal
-  sleep 0.05
-  sample :drum_cymbal_pedal
-  sleep 0.175
+define :melody2 do
+  play :B3, amp:0.4*f, sustain: 1.5
+  sleep 1
+  play :a3, amp:0.4*f, sustain: 1.5
+  sleep 0.5
+  play :a3, amp:0.4*f, sustain: 1.5
 end
-melody
+define :melody3 do
+  play :B3, amp:0.4*f, sustain: 1.5
+  sleep 1
+  play :a3, amp:0.4*f, sustain: 1.5
+  sleep 1
+  play :b3, amp:0.4*f, sustain: 1.5
+  sleep 1
+  play :fs3, amp:0.4*f, sustain: 1.5
+end
+sleep 16
+live_loop :snares do
+  with_fx :krush do
+    sample :drum_snare_soft, amp:0.5*f
+    sleep 1
+    sample :drum_snare_soft, amp:0.5*f
+    sleep 1
+    sample :drum_snare_soft, amp:0.5*f
+    sleep 1
+    sample :drum_snare_soft, amp:0.5*f
+    sleep 1
+    sample :drum_snare_soft, amp:0.5*f
+    sleep 1
+    sample :drum_snare_soft, amp:0.5*f
+    sleep 1
+    fastdrums
+  end
+end
+sleep 16
+with_fx :lpf, cutoff: 50 do
+  live_loop :bassington do
+    use_synth :chipbass
+    16.times do
+      play (knit :d1, 2, :b1, 2).tick, sustain: 1.75, amp:0.75*f
+      sleep 4
+    end
+  end
+end
+sleep 16
+use_synth :subpulse
+live_loop :maindish do
+  startofmelody
+  sleep 2
+  melody2
+  sleep 8.5
+  startofmelody
+  sleep 2
+  melody3
+  sleep 17
+end
+sleep 32
+live_loop :drums do
+  with_fx :reverb do
+    sample :drum_bass_soft, amp:1*f
+    sleep 2
+    f=f-0.05
+  end
+end

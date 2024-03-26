@@ -1,1 +1,16 @@
-use_bpm 158
+change="C:/Users/kai_luzniak/Documents/Audacity/Change.mp3"
+time="C:/Users/kai_luzniak/Documents/Audacity/compscisamplekai.wav"
+les="C:/Users/kai_luzniak/Documents/Audacity/Les.mp3"
+january="C:/Users/kai_luzniak/Documents/Audacity/January.mp3"
+use_bpm 60
+#sample january
+#sleep 12
+live_loop :les do
+  sample les, amp:0.5
+  sleep 8
+end
+#sleep 16
+live_loop :drums do
+  sample :drum_tom_lo_soft, amp:0.5
+  sleep 0.5
+end

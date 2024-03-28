@@ -1,0 +1,24 @@
+
+define :section1 do
+  sleep 0.5
+  play :ds4
+  sleep 0.25
+  play :g4
+  sleep 0.25
+end
+define :trash do |x|
+  play x
+  section1
+  
+end
+live_loop :melody do
+  trash :c4
+  trash :b3
+  trash :as3
+  play :d4
+  sleep 0.5
+  play :ds4
+  sleep 0.25
+  play :g4
+  sleep 0.25
+end
